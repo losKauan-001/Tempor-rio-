@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#081a2c" />
+<meta name="description" content="Roteiro de estudo para o seminário Saúde Conectada: leitura confortável, falas por integrante e modo ensaio." />
+<title>Saúde Conectada — Roteiro de Apresentação</title>
+<style>
+:root{
+  color-scheme:light;
+  --night:#091a2d;--night-2:#122b43;--page:#f3f6f8;--paper:#fff;--ink:#183145;--mute:#697e8b;--line:#e0e9ef;--primary:#0e8f9e;--teal:#087f84;
+  --user-font:21px;--user-line:1.74;--shadow:0 15px 48px rgba(21,46,65,.055),0 2px 11px rgba(21,46,65,.028);
+  --speaker:#4169d6;--speaker-pale:#eef3ff;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--page);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button,select{font:inherit}
+button{cursor:pointer}
+button:focus-visible,input:focus-visible,.script-line:focus-visible{outline:3px solid #20a8bc;outline-offset:3px}
+button:disabled{opacity:.45;cursor:not-allowed}
+::selection{background:#b6eced;color:#133642}
+.hero{background:linear-gradient(125deg,#081a2b 1%,#12334a 74%,#114b57 120%);color:white;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle at 80% 12%,rgba(62,207,207,.2),transparent 32%),radial-gradient(circle at 24% 93%,rgba(67,114,191,.2),transparent 40%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.13;background-image:linear-gradient(to right,transparent calc(100% - 1px),#acced8 calc(100% - 1px)),linear-gradient(to bottom,transparent calc(100% - 1px),#acced8 calc(100% - 1px));background-size:65px 65px;mask-image:linear-gradient(90deg,transparent,black)}
+.hero-content{max-width:1330px;margin:auto;padding:24px 44px 40px;position:relative;z-index:1}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:48px}
+.brand{display:flex;gap:11px;align-items:center;font-size:14px;font-weight:770;letter-spacing:.01em}
+.brand-symbol{display:grid;place-items:center;width:37px;height:37px;border-radius:11px;background:rgba(27,195,192,.18);border:1px solid rgba(115,231,222,.32);color:#90f1e7}
+.brand small{display:block;margin-top:2px;color:#b3d1df;letter-spacing:.05em;font-size:10px;font-weight:650}
+.top-right{display:flex;align-items:center;gap:9px}
+.top-chip{color:#d2e4e9;padding:9px 13px;border:1px solid rgba(203,234,245,.2);border-radius:50px;font-size:12px;font-weight:650;white-space:nowrap}
+.hero-layout{display:grid;grid-template-columns:minmax(0,1fr) 270px;align-items:center;gap:40px}
+.overline{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.16em;font-weight:800;text-transform:uppercase;color:#80e6e3;margin-bottom:19px}
+.overline span{width:24px;height:2px;background:#7ce2dc;border-radius:2px}
+h1{font-size:clamp(43px,5.3vw,76px);line-height:1.02;letter-spacing:-.055em;margin:0 0 17px;font-weight:800;text-wrap:balance}
+h1 em{font-style:normal;color:#78e1d8}
+.hero-lead{font-size:16px;line-height:1.7;color:#c4dce8;max-width:590px;margin:0 0 26px}
+.hero-info{display:flex;flex-wrap:wrap;gap:10px}
+.info-chip{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(216,239,247,.12);border-radius:10px;padding:9px 12px;color:#e7f7fb;font-size:12px;font-weight:650}
+.info-chip svg{opacity:.83}
+.hero-art{width:248px;height:248px;justify-self:center;position:relative;display:grid;place-items:center}
+.art-orbit{width:190px;height:190px;border-radius:50%;border:1px solid rgba(124,233,219,.25);display:grid;place-items:center;background:radial-gradient(circle,rgba(23,156,170,.12),transparent 74%);box-shadow:0 0 0 30px rgba(103,226,219,.035),0 0 0 57px rgba(103,226,219,.026)}
+.art-orbit svg{width:128px;height:128px;filter:drop-shadow(0 12px 18px rgba(3,17,25,.35))}
+.art-label{position:absolute;border:1px solid rgba(145,236,226,.3);background:rgba(14,54,68,.86);border-radius:20px;padding:7px 12px;font-size:11px;font-weight:700;color:#b7fff1;backdrop-filter:blur(8px)}
+.art-label.one{left:-8px;top:48px}.art-label.two{right:-8px;bottom:35px}
+.toolbar-wrap{position:sticky;top:0;z-index:30;background:rgba(245,248,250,.96);backdrop-filter:blur(16px);border-bottom:1px solid #dce6eb}
+.toolbar{max-width:1330px;min-height:72px;padding:11px 44px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.toolbar-main{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tool-label{font-weight:800;font-size:12px;color:#6d8491;margin-right:5px;white-space:nowrap}
+.control-btn{border:1px solid #d4e1e7;background:#fff;color:#284353;min-height:40px;padding:9px 13px;border-radius:10px;font-size:12px;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 1px 3px rgba(0,0,0,.02);transition:background .2s,border .2s,transform .2s}
+.control-btn:hover{border-color:#a0c6d0;background:#eaf7f8}
+.control-btn:active{transform:scale(.98)}
+.control-btn svg{width:17px;height:17px}
+.control-btn.is-on{background:#d4f5f1;border-color:#8dded4;color:#08686d}
+.font-indicator{min-width:27px;display:inline-block;text-align:center;font-size:12px;color:#607b88;font-weight:800}
+.toolbar-second{display:flex;align-items:center;gap:7px}
+.main-layout{max-width:1330px;padding:30px 44px 95px;margin:auto;display:grid;grid-template-columns:265px minmax(0,1fr) 232px;gap:23px;align-items:start}
+.sidebar,.aside-right{position:sticky;top:100px}
+.side-card,.right-card{border:1px solid var(--line);border-radius:18px;background:var(--paper);padding:18px;box-shadow:var(--shadow)}
+.side-title{font-weight:850;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#788d99;margin:0 0 14px}
+.side-desc{font-size:12px;color:#788d99;line-height:1.6;margin:16px 0 0}
+.stage-list{display:grid;gap:7px}
+.stage-item{border:1px solid transparent;background:transparent;border-radius:12px;padding:10px 9px;display:flex;align-items:center;text-align:left;gap:10px;min-width:0;width:100%;color:#4d6674;transition:background .15s,border .15s;position:relative}
+.stage-item:hover{background:#f3f8f9}
+.stage-item.is-active{background:#eaf6f6;border-color:#c5e9e9;color:#0c6770}
+.stage-index{font-size:11px;font-weight:850;color:#9aadb8;flex:none;width:20px}
+.stage-item.is-active .stage-index{color:#098996}
+.stage-meta{min-width:0;flex:1}
+.stage-name{display:block;font-weight:820;font-size:13px;line-height:1.4}
+.stage-title{display:block;font-size:11px;line-height:1.4;color:#778d98;margin-top:2px}
+.stage-arrow{font-size:16px;opacity:.38}
+.stage-item.is-active .stage-arrow{opacity:.9}
+.division{height:1px;background:#eaf0f3;margin:19px 0}
+.mini-progress{height:7px;background:#e8f0f2;border-radius:100px;overflow:hidden}
+.mini-progress>span{display:block;width:25%;height:100%;background:linear-gradient(90deg,#148da0,#60cdbc);border-radius:100px;transition:width .35s}
+.progress-meta{display:flex;justify-content:space-between;align-items:center;font-size:11px;margin-top:9px;color:#7d929d}
+.progress-meta strong{color:#176677}
+.mini-help{font-size:12px;line-height:1.65;color:#718995}
+.mini-help kbd{font-family:inherit;border:1px solid #d5e4eb;border-bottom-width:2px;background:#f9fcfd;padding:1px 5px;border-radius:4px;font-weight:800;font-size:11px;color:#4c6b7a}
+.speaker-blue{--speaker:#3b6ecb;--speaker-pale:#edf3fe}
+.speaker-teal{--speaker:#087c81;--speaker-pale:#e5f7f2}
+.speaker-amber{--speaker:#ae7325;--speaker-pale:#fff4e7}
+.speaker-violet{--speaker:#7859b8;--speaker-pale:#f2edfc}
+.speech-panel{background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;min-width:0}
+.speech-panel[hidden]{display:none!important}
+.speech-head{padding:34px clamp(20px,4.4vw,56px) 28px;border-bottom:1px solid var(--line);background:linear-gradient(118deg,var(--paper),var(--speaker-pale));position:relative}
+.speech-head::after{content:"";position:absolute;width:90px;height:90px;right:25px;top:20px;border:1px solid var(--speaker);opacity:.10;border-radius:50%;box-shadow:0 0 0 20px var(--speaker-pale)}
+.eyebrow{font-size:10px;font-weight:850;letter-spacing:.1em;color:var(--speaker);display:flex;align-items:center;gap:8px;margin-bottom:24px}
+.pill-dot{width:7px;height:7px;background:var(--speaker);border-radius:50%}
+.eyebrow-sep{color:#b8c8d1}
+.speaker-lead{display:flex;align-items:center;gap:12px;margin-bottom:19px}
+.avatar{width:54px;height:54px;display:grid;place-items:center;flex:none;border-radius:15px;background:var(--speaker);color:#fff;font-size:25px;font-weight:850;box-shadow:0 8px 20px rgba(37,69,89,.13)}
+.speaker-prefix{font-size:12px;color:#678290;font-weight:650}
+.speaker-lead h2{margin:2px 0 0;color:#182f43;font-size:25px;letter-spacing:-.035em;line-height:1.2}
+.speech-title{font-size:clamp(26px,3.2vw,38px);font-weight:800;letter-spacing:-.045em;line-height:1.15;color:#193349;margin:0 0 10px;text-wrap:balance}
+.speech-subtitle{font-size:14px;color:#5f7b8b;margin:0 0 22px;line-height:1.5}
+.speech-chips{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.speech-chips span{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.73);border:1px solid #d7e4eb;border-radius:50px;color:#537080;font-size:11px;font-weight:760;padding:7px 11px}
+.speech-reading{padding:28px clamp(20px,4.4vw,56px) 12px}
+.reading-helper{background:#f0f8f9;color:#5b7c88;font-size:12px;line-height:1.5;padding:12px 14px;border:1px solid #dbeded;border-radius:11px;margin-bottom:36px;display:flex;align-items:center;gap:10px}
+.helper-bullet{color:#0b9ca5}
+.beat{margin:0 0 38px;position:relative}
+.beat-heading{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.beat-dot{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:var(--speaker-pale);color:var(--speaker);font-size:11px;font-weight:850;flex:none}
+.beat-heading h3{font-size:11px;letter-spacing:.085em;text-transform:uppercase;white-space:nowrap;font-weight:850;color:var(--speaker);margin:0}
+.beat-stripe{height:1px;background:#e6edf2;flex:1}
+.beat-body{max-width:64ch;margin-left:2px}
+.script-line{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:var(--user-font);line-height:var(--user-line);letter-spacing:-.013em;color:#263e4e;margin:0 0 .87em;border-radius:7px;transition:background .18s,opacity .18s;cursor:pointer;scroll-margin-top:95px}
+.script-line:last-child{margin-bottom:0}
+.script-line:hover{background:#f1f8fa}
+.script-line.is-current{background:linear-gradient(90deg,#dff5ee,#f2fcf9);box-shadow:-5px 0 0 var(--speaker);outline:none;padding:3px 8px;margin-left:-8px;margin-right:-8px}
+.ink-mark{font-weight:820;color:#0d6477;text-decoration:none}
+.speech-foot{margin:0 clamp(20px,4.4vw,56px) 38px;padding:20px 23px;border-radius:14px;background:#f2f7f9;border:1px solid #e1ecf0}
+.remember-title{text-transform:uppercase;letter-spacing:.09em;font-size:11px;color:#5c7b88;font-weight:850;margin-bottom:10px}
+.remember-list{margin:0;padding-left:19px;display:grid;gap:6px;font-size:13px;color:#375968;font-weight:700;line-height:1.5}
+.after-reading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:18px 0 0;flex-wrap:wrap}
+.after-reading .control-btn{min-width:145px}
+.right-card+.right-card{margin-top:14px}
+.timer-caption{font-size:12px;color:#7b929e;line-height:1.5;margin:0 0 8px}
+.timer-value{font-size:42px;line-height:1.13;letter-spacing:-.06em;font-variant-numeric:tabular-nums;font-weight:850;color:#1a374a;margin-bottom:12px}
+.time-target{display:inline-flex;align-items:center;gap:7px;color:#087f7b;background:#e7f8f3;border-radius:8px;font-size:11px;font-weight:780;padding:6px 9px;margin-bottom:17px}
+.timer-buttons{display:flex;gap:7px}
+.timer-buttons button{flex:1}
+.time-note{font-size:11px;line-height:1.6;color:#8298a3;margin-top:12px}
+.timer-status{min-height:33px;font-size:11px;color:#6e8793;line-height:1.5;margin:10px 0 0}
+.memory-points{padding:0;margin:0;list-style:none;display:grid;gap:11px}
+.memory-points li{display:flex;align-items:flex-start;gap:9px;line-height:1.4;font-size:12px;font-weight:680;color:#5c7684}
+.memory-points li::before{content:"";width:7px;height:7px;flex:none;border-radius:50%;background:#49b8af;margin-top:5px}
+.aside-hint{font-size:11px;color:#8fa0aa;line-height:1.5;margin:12px 0 0}
+.endnote{max-width:1330px;margin:0 auto 36px;padding:0 44px;color:#91a3ad;font-size:12px;line-height:1.6}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);border-radius:10px;padding:12px 18px;background:#122d40;color:#fff;font-size:13px;font-weight:750;z-index:90;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;box-shadow:0 10px 28px rgba(0,0,0,.22)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.floating-nav{display:none}
+body.focus-mode{--page:#edf4f5}
+body.focus-mode .hero,body.focus-mode .sidebar,body.focus-mode .aside-right,body.focus-mode .endnote,body.focus-mode .reading-helper{display:none}
+body.focus-mode .main-layout{display:block;max-width:890px;padding-top:24px}
+body.focus-mode .toolbar{max-width:890px}
+body.focus-mode .speech-head{padding-top:23px;padding-bottom:17px}
+body.focus-mode .speech-panel{box-shadow:0 20px 48px rgba(18,44,58,.07)}
+body.focus-mode .speech-title{font-size:29px}
+body.focus-mode .speech-reading{padding-top:38px}
+body.focus-mode .beat{margin-bottom:43px}
+body.focus-mode .beat-body{max-width:65ch}
+body.dark-mode{--page:#0e1c2a;--paper:#162839;--ink:#e4f1f5;--mute:#a2b8c3;--line:#2a4050;--shadow:none;color:#d9e8ee}
+body.dark-mode .toolbar-wrap{background:rgba(19,35,49,.96);border-color:#2b4552}
+body.dark-mode .control-btn{background:#213849;border-color:#3b5261;color:#dcecf3}
+body.dark-mode .control-btn.is-on{background:#185856;border-color:#277f7a}
+body.dark-mode .tool-label,body.dark-mode .side-title{color:#a7bfca}
+body.dark-mode .stage-item{color:#cadce6}
+body.dark-mode .stage-item:hover{background:#223c49}
+body.dark-mode .stage-item.is-active{background:#1e5054;border-color:#306e70;color:#b7f4e8}
+body.dark-mode .stage-title,body.dark-mode .side-desc,body.dark-mode .mini-help{color:#92adb9}
+body.dark-mode .stage-index{color:#81a1ad}
+body.dark-mode .speech-head{background:linear-gradient(118deg,#172b3c,#1c3746)}
+body.dark-mode .speaker-lead h2,body.dark-mode .speech-title,body.dark-mode .timer-value{color:#edfaff}
+body.dark-mode .speech-subtitle,body.dark-mode .speaker-prefix,body.dark-mode .timer-caption,body.dark-mode .time-note{color:#acc3ce}
+body.dark-mode .speech-chips span{background:#1d3748;border-color:#36525f;color:#b5d2dc}
+body.dark-mode .script-line{color:#deebee}
+body.dark-mode .script-line:hover{background:#203949}
+body.dark-mode .script-line.is-current{background:linear-gradient(90deg,#205657,#223747)}
+body.dark-mode .ink-mark{color:#83e6dc}
+body.dark-mode .reading-helper,body.dark-mode .speech-foot{background:#203848;border-color:#345365;color:#adced5}
+body.dark-mode .remember-title,body.dark-mode .remember-list,body.dark-mode .memory-points li{color:#b6d2da}
+body.dark-mode .beat-stripe{background:#365060}
+body.dark-mode .division{background:#314958}
+body.dark-mode .time-target{background:#1c524f;color:#9de7d7}
+body.dark-mode .mini-progress{background:#294556}
+body.dark-mode .endnote{color:#91a7b5}
+@media(max-width:1150px){.main-layout{grid-template-columns:235px minmax(0,1fr);gap:20px}.aside-right{grid-column:2;position:static;display:grid;grid-template-columns:1fr 1fr;gap:15px}.right-card+.right-card{margin:0}.sidebar{top:94px}}
+@media(max-width:800px){
+  .hero-content{padding:19px 24px 32px}.topbar{margin-bottom:34px}.hero-layout{grid-template-columns:1fr}.hero-art{display:none}
+  h1{font-size:clamp(40px,9vw,62px)}.hero-lead{font-size:14px}.toolbar{padding:11px 22px;flex-wrap:wrap}.main-layout{padding:18px 20px 65px;display:block}
+  .sidebar{position:static;margin-bottom:17px}.side-card{padding:13px}.side-title,.side-desc,.sidebar .division,.sidebar .progress-wrap,.sidebar .mini-help{display:none}
+  .stage-list{display:flex;overflow:auto;gap:7px;padding:1px 2px 5px;scrollbar-width:thin}.stage-item{flex:0 0 auto;width:155px;padding:9px 10px;white-space:normal}.stage-arrow{display:none}.stage-title{font-size:10px}
+  .aside-right{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+  .speech-head{padding:26px 25px}.speech-reading{padding:22px 25px 10px}.speech-foot{margin:0 25px 25px}
+  .endnote{padding:0 23px}
+}
+@media(max-width:520px){
+  :root{--user-font:20px}
+  .hero-content{padding:16px 19px 29px}.topbar{margin-bottom:30px}.top-chip{display:none}.brand{font-size:13px}.brand-symbol{height:34px;width:34px}
+  h1{font-size:44px}.hero-lead{font-size:13.5px;line-height:1.66}.hero-info{gap:6px}.info-chip{font-size:11px;padding:7px 9px}
+  .toolbar{padding:10px 14px;gap:8px;min-height:0}.tool-label{display:none}.toolbar-main{gap:5px}.toolbar-second{gap:5px}
+  .control-btn{padding:9px 10px;min-height:38px;font-size:11px}.control-btn .hide-on-phone{display:none}.font-indicator{font-size:10px;min-width:18px}
+  .main-layout{padding:14px 12px 64px}.sidebar{margin-bottom:12px}.side-card{border-radius:13px;padding:9px}
+  .stage-item{width:143px}.stage-index{font-size:10px}.stage-name{font-size:12px}.stage-title{font-size:10px}
+  .speech-panel{border-radius:15px}.speech-head{padding:22px 19px}.speaker-lead{margin-bottom:17px}.avatar{width:47px;height:47px;font-size:22px}.speaker-lead h2{font-size:22px}.speech-title{font-size:28px}.speech-subtitle{font-size:12.5px}.speech-chips{gap:6px}.speech-chips span{font-size:10px;padding:6px 8px}
+  .speech-reading{padding:19px 20px 5px}.reading-helper{font-size:11px;line-height:1.5;margin-bottom:28px;padding:10px}.beat{margin-bottom:34px}.beat-heading{gap:9px;margin-bottom:16px}.beat-dot{height:27px;width:27px}.beat-heading h3{font-size:10px;white-space:normal}
+  .script-line{letter-spacing:-.012em}.speech-foot{margin:0 18px 24px;padding:17px}.aside-right{grid-template-columns:1fr}.timer-value{font-size:34px}.endnote{padding:0 17px}
+  body.focus-mode .main-layout{padding:12px 7px 50px}body.focus-mode .speech-head{padding:17px}body.focus-mode .speech-reading{padding:25px 17px 5px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{
+  @page{size:A4;margin:16mm 17mm}
+  html,body{background:#fff!important;color:#111!important}
+  .hero,.toolbar-wrap,.sidebar,.aside-right,.after-reading,.endnote,.reading-helper,.toast{display:none!important}
+  .main-layout{display:block!important;max-width:none!important;padding:0!important;margin:0!important}
+  .speech-panel,.speech-panel[hidden]{display:block!important;page-break-before:always;border:0!important;box-shadow:none!important;overflow:visible!important;border-radius:0!important}
+  .speech-panel:first-child{page-break-before:auto}
+  .speech-head{padding:0 0 9px!important;border-bottom:2px solid #aaa!important;background:none!important}
+  .speech-head:after,.avatar,.eyebrow,.speech-subtitle,.speech-chips,.remember-list,.remember-title,.speech-foot{display:none!important}
+  .speaker-lead{margin-bottom:3px!important}.speaker-lead h2{font-size:19px!important;color:#111!important}
+  .speech-title{font-size:22px!important;color:#111!important}
+  .speech-reading{padding:12px 0 0!important}
+  .beat{break-inside:avoid;margin-bottom:19px!important}
+  .beat-heading{margin-bottom:7px!important}.beat-heading h3{font-size:10px!important;color:#555!important}.beat-dot{display:none!important}
+  .script-line{font-size:12.8px!important;line-height:1.5!important;color:#111!important;margin-bottom:.6em!important;break-inside:avoid!important}
+  .ink-mark{color:#111!important}.script-line.is-current{background:none!important;box-shadow:none!important;margin-left:0!important;padding:0!important}
+}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+ <div class="hero-content">
+  <div class="topbar">
+   <div class="brand"><span class="brand-symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></span><div>SAÚDE CONECTADA<small>ROTEIRO DE APRESENTAÇÃO</small></div></div>
+   <div class="top-right"><span class="top-chip">2º ano • Ensino Médio</span><span class="top-chip">Seminário • 4 slides</span></div>
+  </div>
+  <div class="hero-layout">
+   <div>
+    <div class="overline"><span></span> Roteiro de estudo • IoMT</div>
+    <h1>Falar bem.<br/><em>Sem complicar.</em></h1>
+    <p class="hero-lead">Quatro falas organizadas na ordem alfabética. Leia com calma, memorize as ideias e ensaie para apresentar sem depender do texto.</p>
+    <div class="hero-info"><span class="info-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg> Meta de 8 a 10 min</span><span class="info-chip">Heitor → Jeferson → João → Kauã</span><span class="info-chip">Funciona offline</span></div>
+   </div>
+   <div class="hero-art" aria-hidden="true"><div class="art-orbit"><svg viewBox="0 0 128 128" fill="none"><circle cx="64" cy="64" r="50" stroke="#4dd5c5" stroke-width="1.2" stroke-dasharray="5 8" opacity=".7"/><path d="M20 66h22l12-29 18 53 13-30h23" stroke="#73f3e0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="109" cy="60" r="5" fill="#a5fff0"/></svg></div><span class="art-label one">● Ao vivo</span><span class="art-label two">♡ IoMT</span></div>
+  </div>
+ </div>
+</header>
+<div class="toolbar-wrap">
+ <div class="toolbar" aria-label="Ferramentas do roteiro">
+  <div class="toolbar-main">
+   <span class="tool-label">LEITURA</span>
+   <button class="control-btn" id="smaller" title="Diminuir fonte" aria-label="Diminuir o tamanho das letras">A−</button>
+   <span class="font-indicator" id="font-indicator" aria-live="polite">21</span>
+   <button class="control-btn" id="bigger" title="Aumentar fonte" aria-label="Aumentar o tamanho das letras">A+</button>
+   <button class="control-btn" id="focus" aria-pressed="false" title="Esconder distrações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m13-5h3a2 2 0 0 1 2 2v3M3 16v3a2 2 0 0 0 2 2h3m13-5v3a2 2 0 0 1-2 2h-3"/></svg><span class="hide-on-phone">Modo foco</span></button>
+   <button class="control-btn" id="theme" aria-pressed="false" title="Alternar claro/escuro" aria-label="Alternar tema claro e escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg></button>
+  </div>
+  <div class="toolbar-second"><button class="control-btn" id="copy" title="Copiar fala atual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span class="hide-on-phone">Copiar fala</span></button><button class="control-btn" id="print" title="Imprimir todos os roteiros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg><span class="hide-on-phone">Imprimir</span></button></div>
+ </div>
+</div>
+<main class="main-layout" id="main">
+ <nav class="sidebar" aria-label="Ordem de apresentação"><div class="side-card"><h2 class="side-title">Ordem de apresentação</h2><div class="stage-list">
+<button class="stage-item is-active" type="button" data-go="0" aria-label="Abrir slide 1, Funcionamento, fala de Heitor" aria-current="step">
+    <span class="stage-index">01</span>
+    <span class="stage-meta"><span class="stage-name">Heitor</span><span class="stage-title">Funcionamento</span></span>
+    <span class="stage-arrow" aria-hidden="true">↗</span>
+</button>
+<button class="stage-item " type="button" data-go="1" aria-label="Abrir slide 2, Benefícios e diagnóstico precoce, fala de Jeferson" >
+    <span class="stage-index">02</span>
+    <span class="stage-meta"><span class="stage-name">Jeferson</span><span class="stage-title">Benefícios e diagnóstico precoce</span></span>
+    <span class="stage-arrow" aria-hidden="true">↗</span>
+</button>
+<button class="stage-item " type="button" data-go="2" aria-label="Abrir slide 3, Riscos, segurança e responsabilidade, fala de João" >
+    <span class="stage-index">03</span>
+    <span class="stage-meta"><span class="stage-name">João</span><span class="stage-title">Riscos, segurança e responsabilidade</span></span>
+    <span class="stage-arrow" aria-hidden="true">↗</span>
+</button>
+<button class="stage-item " type="button" data-go="3" aria-label="Abrir slide 4, Conclusão, fala de Kauã" >
+    <span class="stage-index">04</span>
+    <span class="stage-meta"><span class="stage-name">Kauã</span><span class="stage-title">Conclusão</span></span>
+    <span class="stage-arrow" aria-hidden="true">↗</span>
+</button>
+ </div><p class="side-desc">Um slide por integrante, com as passagens de fala já corrigidas.</p><div class="division"></div><div class="progress-wrap"><div class="side-title" style="margin-bottom:10px">Etapa atual</div><div class="mini-progress"><span id="stage-progress"></span></div><div class="progress-meta"><strong id="stage-count">1 de 4</strong><span>slides</span></div></div><div class="division"></div><p class="mini-help">Dica: use as teclas <kbd>←</kbd> e <kbd>→</kbd> para mudar de slide. Clique num parágrafo para marcar onde parou.</p></div></nav>
+ <div class="reading-column">
+<article class="speech-panel speaker-blue" data-slide="0" id="slide-1" aria-labelledby="slide-title-1" >
+        <header class="speech-head">
+          <div class="eyebrow"><span class="pill-dot"></span> SLIDE 1 DE 4 <span class="eyebrow-sep">/</span> ENTENDA A IDEIA</div>
+          <div class="speaker-lead"><span class="avatar" aria-hidden="true">H</span><div><div class="speaker-prefix">Fala de</div><h2 id="slide-title-1">Heitor</h2></div></div>
+          <h3 class="speech-title">Funcionamento</h3>
+          <p class="speech-subtitle">Como os aparelhos levam informações até os profissionais de saúde</p>
+          <div class="speech-chips"><span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg> Previsão: 2min10s – 2min25s</span><span>385 palavras</span></div>
+        </header>
+        <div class="speech-reading">
+          <div class="reading-helper"><span class="helper-bullet" aria-hidden="true">✦</span> Leia um bloco por vez. Clique numa frase para marcar onde parou.</div>
+          <section class="beat" aria-label="Trecho 1: Abertura">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">01</span><h3>Abertura</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="0" title="Clique para marcar este trecho como atual">Bom dia, pessoal. O tema do nosso grupo é <strong class="ink-mark">saúde conectada</strong>.</p><p class="script-line" tabindex="0" data-line="1" title="Clique para marcar este trecho como atual">A ideia é mostrar como a internet pode ajudar a cuidar da saúde, mesmo quando o paciente não está no hospital.</p></div>
+        </section><section class="beat" aria-label="Trecho 2: Um exemplo conhecido">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">02</span><h3>Um exemplo conhecido</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="2" title="Clique para marcar este trecho como atual">Para começar, pensem em um relógio inteligente.</p><p class="script-line" tabindex="0" data-line="3" title="Clique para marcar este trecho como atual">Muita gente usa esse relógio para ver as horas, contar passos ou medir os batimentos do coração.</p><p class="script-line" tabindex="0" data-line="4" title="Clique para marcar este trecho como atual">Agora imaginem usar esse tipo de informação para ajudar um médico a acompanhar um paciente.</p><p class="script-line" tabindex="0" data-line="5" title="Clique para marcar este trecho como atual">É desse assunto que estamos falando.</p><p class="script-line" tabindex="0" data-line="6" title="Clique para marcar este trecho como atual">E a palavra &quot;conectada&quot; não quer dizer que a pessoa precisa ficar o dia todo olhando para uma tela.</p><p class="script-line" tabindex="0" data-line="7" title="Clique para marcar este trecho como atual">Quer dizer que o aparelho registra dados e consegue compartilhar informações que ajudam no cuidado.</p></div>
+        </section><section class="beat" aria-label="Trecho 3: O que é IoMT">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">03</span><h3>O que é IoMT</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="8" title="Clique para marcar este trecho como atual">O nome da tecnologia é <strong class="ink-mark">Internet das Coisas Médicas</strong>, ou IoMT.</p><p class="script-line" tabindex="0" data-line="9" title="Clique para marcar este trecho como atual">O nome parece complicado, mas a ideia é simples.</p><p class="script-line" tabindex="0" data-line="10" title="Clique para marcar este trecho como atual">São aparelhos de saúde que se conectam à internet e conseguem enviar dados.</p></div>
+        </section><section class="beat" aria-label="Trecho 4: Como funciona">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">04</span><h3>Como funciona</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="11" title="Clique para marcar este trecho como atual"><strong class="ink-mark">Na prática, funciona assim.</strong></p><p class="script-line" tabindex="0" data-line="12" title="Clique para marcar este trecho como atual">Primeiro, um sensor mede algo do corpo. Pode ser o ritmo do coração, por exemplo.</p><p class="script-line" tabindex="0" data-line="13" title="Clique para marcar este trecho como atual">Depois, essa informação é enviada por uma rede.</p><p class="script-line" tabindex="0" data-line="14" title="Clique para marcar este trecho como atual">Por fim, ela pode chegar a um sistema que o profissional de saúde usa para acompanhar o paciente.</p></div>
+        </section><section class="beat" aria-label="Trecho 5: Por que faz diferença">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">05</span><h3>Por que faz diferença</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="15" title="Clique para marcar este trecho como atual">E qual é a diferença entre esse modelo e o atendimento mais comum?</p><p class="script-line" tabindex="0" data-line="16" title="Clique para marcar este trecho como atual">Em uma consulta, o médico vê como a pessoa está naquele momento.</p><p class="script-line" tabindex="0" data-line="17" title="Clique para marcar este trecho como atual">Já com o acompanhamento em casa, alguns dados podem ser registrados ao longo do dia.</p><p class="script-line" tabindex="0" data-line="18" title="Clique para marcar este trecho como atual">Isso ajuda a perceber mudanças que talvez não apareçam durante a consulta.</p><p class="script-line" tabindex="0" data-line="19" title="Clique para marcar este trecho como atual">Vamos imaginar uma pessoa mais velha, que precisa acompanhar a saúde do coração.</p><p class="script-line" tabindex="0" data-line="20" title="Clique para marcar este trecho como atual">Em vez de depender apenas das visitas ao hospital, ela pode usar um aparelho indicado para seu caso.</p><p class="script-line" tabindex="0" data-line="21" title="Clique para marcar este trecho como atual">Se surgir uma mudança importante, a equipe de saúde pode receber essa informação e avaliar o que fazer.</p><p class="script-line" tabindex="0" data-line="22" title="Clique para marcar este trecho como atual">Isso não quer dizer que o paciente nunca mais vá ao médico.</p><p class="script-line" tabindex="0" data-line="23" title="Clique para marcar este trecho como atual">Quer dizer que o médico pode ter mais informações para cuidar dele.</p></div>
+        </section><section class="beat" aria-label="Trecho 6: Ideia principal e passagem">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">06</span><h3>Ideia principal e passagem</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="24" title="Clique para marcar este trecho como atual">E existe uma mudança importante nessa ideia: em vez de agir só depois que um problema piora, o objetivo é <strong class="ink-mark">perceber sinais mais cedo</strong>.</p><p class="script-line" tabindex="0" data-line="25" title="Clique para marcar este trecho como atual">É uma forma de tentar prevenir problemas.</p><p class="script-line" tabindex="0" data-line="26" title="Clique para marcar este trecho como atual">No nosso trabalho, buscamos entender três pontos: se esses aparelhos ajudam no cuidado em casa, se podem reduzir gastos e se os dados enviados ficam protegidos.</p><p class="script-line" tabindex="0" data-line="27" title="Clique para marcar este trecho como atual">Agora que vimos como funciona, o Jeferson vai falar sobre os benefícios dessa tecnologia.</p></div>
+        </section>
+        </div>
+        <footer class="speech-foot">
+          <div class="remember-title">Resumo para memorizar</div>
+          <ol class="remember-list"><li>Relógio inteligente</li><li>Sensor e internet</li><li>Acompanhamento a distância</li><li>Prevenção</li></ol>
+        </footer>
+      </article>
+<article class="speech-panel speaker-teal" data-slide="1" id="slide-2" aria-labelledby="slide-title-2" hidden>
+        <header class="speech-head">
+          <div class="eyebrow"><span class="pill-dot"></span> SLIDE 2 DE 4 <span class="eyebrow-sep">/</span> OS BENEFÍCIOS</div>
+          <div class="speaker-lead"><span class="avatar" aria-hidden="true">J</span><div><div class="speaker-prefix">Fala de</div><h2 id="slide-title-2">Jeferson</h2></div></div>
+          <h3 class="speech-title">Benefícios e diagnóstico precoce</h3>
+          <p class="speech-subtitle">Acompanhamento, sinais do coração e possível economia</p>
+          <div class="speech-chips"><span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg> Previsão: 2min10s – 2min25s</span><span>383 palavras</span></div>
+        </header>
+        <div class="speech-reading">
+          <div class="reading-helper"><span class="helper-bullet" aria-hidden="true">✦</span> Leia um bloco por vez. Clique numa frase para marcar onde parou.</div>
+          <section class="beat" aria-label="Trecho 1: Acompanhamento frequente">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">01</span><h3>Acompanhamento frequente</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="0" title="Clique para marcar este trecho como atual">Uma das maiores vantagens da saúde conectada é o <strong class="ink-mark">acompanhamento mais frequente</strong> do paciente.</p><p class="script-line" tabindex="0" data-line="1" title="Clique para marcar este trecho como atual">Um exame ou uma consulta mostram o estado da pessoa em um momento.</p><p class="script-line" tabindex="0" data-line="2" title="Clique para marcar este trecho como atual">Já um aparelho que registra dados durante o dia pode mostrar como esse estado muda com o tempo.</p><p class="script-line" tabindex="0" data-line="3" title="Clique para marcar este trecho como atual">Vamos pensar em alguém com um problema no coração.</p><p class="script-line" tabindex="0" data-line="4" title="Clique para marcar este trecho como atual">Essa pessoa pode se sentir bem na hora da consulta, mas apresentar alguma alteração em outro momento.</p><p class="script-line" tabindex="0" data-line="5" title="Clique para marcar este trecho como atual">Dependendo do aparelho e do caso, o acompanhamento pode ajudar a perceber essa mudança.</p></div>
+        </section><section class="beat" aria-label="Trecho 2: Relógios e ritmo do coração">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">02</span><h3>Relógios e ritmo do coração</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="6" title="Clique para marcar este trecho como atual">Um exemplo são alguns relógios inteligentes.</p><p class="script-line" tabindex="0" data-line="7" title="Clique para marcar este trecho como atual">Eles usam sensores para medir os batimentos e, em certos modelos, podem avisar sobre sinais de um ritmo irregular.</p><p class="script-line" tabindex="0" data-line="8" title="Clique para marcar este trecho como atual">Um desses problemas recebe o nome de <strong class="ink-mark">fibrilação atrial</strong>.</p><p class="script-line" tabindex="0" data-line="9" title="Clique para marcar este trecho como atual">Em palavras simples, é quando o coração bate fora do ritmo normal.</p></div>
+        </section><section class="beat" aria-label="Trecho 3: O alerta não é um diagnóstico">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">03</span><h3>O alerta não é um diagnóstico</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="10" title="Clique para marcar este trecho como atual">É importante explicar uma coisa: receber um aviso no relógio <strong class="ink-mark">não é receber um diagnóstico</strong>.</p><p class="script-line" tabindex="0" data-line="11" title="Clique para marcar este trecho como atual">O aviso é um sinal para buscar uma avaliação.</p><p class="script-line" tabindex="0" data-line="12" title="Clique para marcar este trecho como atual">Quem confirma o problema e decide o tratamento é o profissional de saúde.</p><p class="script-line" tabindex="0" data-line="13" title="Clique para marcar este trecho como atual">Por que identificar esses sinais cedo faz diferença?</p><p class="script-line" tabindex="0" data-line="14" title="Clique para marcar este trecho como atual">Porque algumas alterações podem ser cuidadas antes de trazer complicações maiores.</p><p class="script-line" tabindex="0" data-line="15" title="Clique para marcar este trecho como atual">Isso pode evitar que um problema fique mais grave e, em certos casos, diminuir a necessidade de internação.</p><p class="script-line" tabindex="0" data-line="16" title="Clique para marcar este trecho como atual">Mas detectar cedo não significa impedir qualquer doença.</p><p class="script-line" tabindex="0" data-line="17" title="Clique para marcar este trecho como atual">Significa ter mais chance de receber orientação na hora certa.</p><p class="script-line" tabindex="0" data-line="18" title="Clique para marcar este trecho como atual">O resultado também depende do tratamento e dos cuidados de cada pessoa.</p></div>
+        </section><section class="beat" aria-label="Trecho 4: O impacto nos custos">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">04</span><h3>O impacto nos custos</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="19" title="Clique para marcar este trecho como atual">Outro benefício é o uso melhor dos recursos.</p><p class="script-line" tabindex="0" data-line="20" title="Clique para marcar este trecho como atual">Quando parte do acompanhamento pode ser feita em casa, alguns pacientes precisam se deslocar menos.</p><p class="script-line" tabindex="0" data-line="21" title="Clique para marcar este trecho como atual">A equipe também pode acompanhar os dados sem exigir uma visita presencial a cada medição.</p><p class="script-line" tabindex="0" data-line="22" title="Clique para marcar este trecho como atual">Os slides do nosso trabalho citam uma redução de <strong class="ink-mark">até quarenta e cinco por cento</strong> em certos gastos de atendimento em casa.</p><p class="script-line" tabindex="0" data-line="23" title="Clique para marcar este trecho como atual">É um número que chama atenção.</p><p class="script-line" tabindex="0" data-line="24" title="Clique para marcar este trecho como atual">Mas o termo &quot;até&quot; é importante.</p><p class="script-line" tabindex="0" data-line="25" title="Clique para marcar este trecho como atual">Não quer dizer que toda pessoa, todo hospital ou todo tratamento vai economizar essa quantia.</p><p class="script-line" tabindex="0" data-line="26" title="Clique para marcar este trecho como atual">O resultado depende do caso e de como a tecnologia é usada.</p></div>
+        </section><section class="beat" aria-label="Trecho 5: Resumo e passagem">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">05</span><h3>Resumo e passagem</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="27" title="Clique para marcar este trecho como atual">Então temos três benefícios principais: acompanhar com mais frequência, perceber sinais cedo e usar melhor o tempo e os recursos da saúde.</p><p class="script-line" tabindex="0" data-line="28" title="Clique para marcar este trecho como atual">Mas existe uma pergunta que não podemos ignorar: o que acontece com todas essas informações pessoais que são enviadas pela internet?</p><p class="script-line" tabindex="0" data-line="29" title="Clique para marcar este trecho como atual">O João vai falar disso agora.</p></div>
+        </section>
+        </div>
+        <footer class="speech-foot">
+          <div class="remember-title">Resumo para memorizar</div>
+          <ol class="remember-list"><li>Acompanhamento frequente</li><li>Ritmo do coração</li><li>Alerta não é diagnóstico</li><li>Economia de até 45%</li></ol>
+        </footer>
+      </article>
+<article class="speech-panel speaker-amber" data-slide="2" id="slide-3" aria-labelledby="slide-title-3" hidden>
+        <header class="speech-head">
+          <div class="eyebrow"><span class="pill-dot"></span> SLIDE 3 DE 4 <span class="eyebrow-sep">/</span> O OUTRO LADO</div>
+          <div class="speaker-lead"><span class="avatar" aria-hidden="true">J</span><div><div class="speaker-prefix">Fala de</div><h2 id="slide-title-3">João</h2></div></div>
+          <h3 class="speech-title">Riscos, segurança e responsabilidade</h3>
+          <p class="speech-subtitle">Privacidade, LGPD e os limites dos sensores</p>
+          <div class="speech-chips"><span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg> Previsão: 2min15s – 2min35s</span><span>406 palavras</span></div>
+        </header>
+        <div class="speech-reading">
+          <div class="reading-helper"><span class="helper-bullet" aria-hidden="true">✦</span> Leia um bloco por vez. Clique numa frase para marcar onde parou.</div>
+          <section class="beat" aria-label="Trecho 1: O risco dos dados pessoais">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">01</span><h3>O risco dos dados pessoais</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="0" title="Clique para marcar este trecho como atual">Até aqui, vimos como a saúde conectada pode ajudar.</p><p class="script-line" tabindex="0" data-line="1" title="Clique para marcar este trecho como atual">Mas ela também traz riscos.</p><p class="script-line" tabindex="0" data-line="2" title="Clique para marcar este trecho como atual">E um dos maiores riscos está na <strong class="ink-mark">proteção dos dados</strong> dos pacientes.</p><p class="script-line" tabindex="0" data-line="3" title="Clique para marcar este trecho como atual">Pensem no que um aparelho de saúde pode registrar: batimentos do coração, medições do corpo e outras informações sobre uma pessoa.</p><p class="script-line" tabindex="0" data-line="4" title="Clique para marcar este trecho como atual">Esses dados são privados.</p><p class="script-line" tabindex="0" data-line="5" title="Clique para marcar este trecho como atual">Não são coisas que qualquer pessoa deveria poder ver.</p><p class="script-line" tabindex="0" data-line="6" title="Clique para marcar este trecho como atual">Quando um dispositivo envia informações pela internet, é preciso ter cuidado com quem recebe esses dados e com a forma como eles ficam guardados.</p><p class="script-line" tabindex="0" data-line="7" title="Clique para marcar este trecho como atual">Se a segurança falhar, pode ocorrer um acesso sem permissão ou até o vazamento de informações.</p></div>
+        </section><section class="beat" aria-label="Trecho 2: Duas perguntas importantes">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">02</span><h3>Duas perguntas importantes</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="8" title="Clique para marcar este trecho como atual">Imaginem alguém usando um aparelho para acompanhar uma doença.</p><p class="script-line" tabindex="0" data-line="9" title="Clique para marcar este trecho como atual">Essa pessoa aceita compartilhar os dados com a equipe médica para receber ajuda.</p><p class="script-line" tabindex="0" data-line="10" title="Clique para marcar este trecho como atual">Ela não está dando permissão para uma empresa, um estranho ou outra pessoa usar tudo isso de qualquer jeito.</p><p class="script-line" tabindex="0" data-line="11" title="Clique para marcar este trecho como atual">Uma forma simples de pensar nisso é fazer duas perguntas.</p><p class="script-line" tabindex="0" data-line="12" title="Clique para marcar este trecho como atual"><strong class="ink-mark">Quem pode ver meus dados?</strong></p><p class="script-line" tabindex="0" data-line="13" title="Clique para marcar este trecho como atual">E para que essas informações serão usadas?</p><p class="script-line" tabindex="0" data-line="14" title="Clique para marcar este trecho como atual">Se ninguém consegue dar uma resposta clara, já temos um motivo para ter cuidado.</p></div>
+        </section><section class="beat" aria-label="Trecho 3: Por que existe a LGPD">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">03</span><h3>Por que existe a LGPD</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="15" title="Clique para marcar este trecho como atual">É por isso que a segurança faz parte do cuidado com o paciente.</p><p class="script-line" tabindex="0" data-line="16" title="Clique para marcar este trecho como atual">Não basta o sensor funcionar bem.</p><p class="script-line" tabindex="0" data-line="17" title="Clique para marcar este trecho como atual">O sistema também precisa proteger os dados.</p><p class="script-line" tabindex="0" data-line="18" title="Clique para marcar este trecho como atual">No Brasil, temos a <strong class="ink-mark">Lei Geral de Proteção de Dados</strong>, a LGPD.</p><p class="script-line" tabindex="0" data-line="19" title="Clique para marcar este trecho como atual">Ela estabelece regras sobre o uso de informações pessoais.</p><p class="script-line" tabindex="0" data-line="20" title="Clique para marcar este trecho como atual">E as informações de saúde exigem um cuidado ainda maior, porque são dados sensíveis.</p><p class="script-line" tabindex="0" data-line="21" title="Clique para marcar este trecho como atual">Na prática, isso significa que hospitais e empresas precisam pensar na <strong class="ink-mark">proteção dos dados</strong> desde o começo.</p><p class="script-line" tabindex="0" data-line="22" title="Clique para marcar este trecho como atual">Precisam controlar o acesso, evitar o uso sem autorização e deixar claro por que as informações são coletadas.</p></div>
+        </section><section class="beat" aria-label="Trecho 4: O aparelho não substitui o médico">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">04</span><h3>O aparelho não substitui o médico</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="23" title="Clique para marcar este trecho como atual">Existe ainda outro risco, que não depende apenas da internet.</p><p class="script-line" tabindex="0" data-line="24" title="Clique para marcar este trecho como atual">É confiar demais no aparelho.</p><p class="script-line" tabindex="0" data-line="25" title="Clique para marcar este trecho como atual">Nenhuma medição deve ser tratada como perfeita.</p><p class="script-line" tabindex="0" data-line="26" title="Clique para marcar este trecho como atual">Um sensor pode falhar, a conexão pode cair ou um aviso pode aparecer sem que exista um problema grave.</p><p class="script-line" tabindex="0" data-line="27" title="Clique para marcar este trecho como atual">Por isso, um relógio <strong class="ink-mark">não deve decidir sozinho</strong> se alguém está doente.</p><p class="script-line" tabindex="0" data-line="28" title="Clique para marcar este trecho como atual">O aparelho pode ajudar a perceber sinais.</p><p class="script-line" tabindex="0" data-line="29" title="Clique para marcar este trecho como atual">Mas o médico precisa analisar o caso, ouvir o paciente e decidir o que fazer.</p></div>
+        </section><section class="beat" aria-label="Trecho 5: Análise e passagem">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">05</span><h3>Análise e passagem</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="30" title="Clique para marcar este trecho como atual">Aqui aparece o ponto central da nossa análise: uma tecnologia só é boa para a saúde se ela for útil e também segura.</p><p class="script-line" tabindex="0" data-line="31" title="Clique para marcar este trecho como atual">Não adianta medir tudo e deixar as informações sem proteção.</p><p class="script-line" tabindex="0" data-line="32" title="Clique para marcar este trecho como atual">Também não adianta receber um alerta e tomar uma decisão sem avaliação médica.</p><p class="script-line" tabindex="0" data-line="33" title="Clique para marcar este trecho como atual">Com esses cuidados em mente, o Kauã vai apresentar a nossa conclusão.</p></div>
+        </section>
+        </div>
+        <footer class="speech-foot">
+          <div class="remember-title">Resumo para memorizar</div>
+          <ol class="remember-list"><li>Dados privados</li><li>Vazamentos</li><li>LGPD</li><li>O médico decide</li></ol>
+        </footer>
+      </article>
+<article class="speech-panel speaker-violet" data-slide="3" id="slide-4" aria-labelledby="slide-title-4" hidden>
+        <header class="speech-head">
+          <div class="eyebrow"><span class="pill-dot"></span> SLIDE 4 DE 4 <span class="eyebrow-sep">/</span> FECHAMENTO</div>
+          <div class="speaker-lead"><span class="avatar" aria-hidden="true">K</span><div><div class="speaker-prefix">Fala de</div><h2 id="slide-title-4">Kauã</h2></div></div>
+          <h3 class="speech-title">Conclusão</h3>
+          <p class="speech-subtitle">Tecnologia, cuidado humano e proteção de dados precisam andar juntos</p>
+          <div class="speech-chips"><span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg> Previsão: 2min10s – 2min25s</span><span>381 palavras</span></div>
+        </header>
+        <div class="speech-reading">
+          <div class="reading-helper"><span class="helper-bullet" aria-hidden="true">✦</span> Leia um bloco por vez. Clique numa frase para marcar onde parou.</div>
+          <section class="beat" aria-label="Trecho 1: O que aprendemos">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">01</span><h3>O que aprendemos</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="0" title="Clique para marcar este trecho como atual">Para concluir, o nosso trabalho mostrou que a <strong class="ink-mark">saúde conectada</strong> pode mudar a forma como as pessoas recebem atendimento.</p><p class="script-line" tabindex="0" data-line="1" title="Clique para marcar este trecho como atual">Antes, muitos dados eram vistos apenas quando o paciente ia à consulta.</p><p class="script-line" tabindex="0" data-line="2" title="Clique para marcar este trecho como atual">Agora, em alguns casos, é possível acompanhar sinais de saúde mesmo à distância.</p><p class="script-line" tabindex="0" data-line="3" title="Clique para marcar este trecho como atual">Isso pode ajudar principalmente quem precisa de cuidado frequente.</p><p class="script-line" tabindex="0" data-line="4" title="Clique para marcar este trecho como atual">Uma pessoa com um problema no coração, por exemplo, pode ter mais informações registradas ao longo do dia.</p><p class="script-line" tabindex="0" data-line="5" title="Clique para marcar este trecho como atual">Com isso, a equipe de saúde pode perceber mudanças e avaliar a situação com mais rapidez.</p></div>
+        </section><section class="beat" aria-label="Trecho 2: Economia, mas com limites">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">02</span><h3>Economia, mas com limites</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="6" title="Clique para marcar este trecho como atual">Também vimos que esse modelo pode trazer economia.</p><p class="script-line" tabindex="0" data-line="7" title="Clique para marcar este trecho como atual">Se alguns atendimentos e medições podem ser feitos sem tantos deslocamentos, é possível usar melhor o tempo dos pacientes e dos profissionais.</p><p class="script-line" tabindex="0" data-line="8" title="Clique para marcar este trecho como atual">Mas essa vantagem depende de bons aparelhos, de uma equipe preparada e das necessidades de cada pessoa.</p></div>
+        </section><section class="beat" aria-label="Trecho 3: Privacidade e cuidado humano">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">03</span><h3>Privacidade e cuidado humano</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="9" title="Clique para marcar este trecho como atual">Ao mesmo tempo, não podemos olhar só para os benefícios.</p><p class="script-line" tabindex="0" data-line="10" title="Clique para marcar este trecho como atual">Um aparelho que guarda dados de saúde também cria uma responsabilidade.</p><p class="script-line" tabindex="0" data-line="11" title="Clique para marcar este trecho como atual">As <strong class="ink-mark">informações precisam ficar protegidas</strong>, e o paciente precisa saber como elas serão usadas.</p><p class="script-line" tabindex="0" data-line="12" title="Clique para marcar este trecho como atual">Tem outro ponto que vale destacar: a tecnologia <strong class="ink-mark">não substitui o lado humano</strong> do atendimento.</p><p class="script-line" tabindex="0" data-line="13" title="Clique para marcar este trecho como atual">Um aparelho consegue registrar números e enviar avisos.</p><p class="script-line" tabindex="0" data-line="14" title="Clique para marcar este trecho como atual">Mas ele não entende sozinho toda a história do paciente, nem deve tomar o lugar do médico.</p><p class="script-line" tabindex="0" data-line="15" title="Clique para marcar este trecho como atual">Então, o mais importante não é ter o relógio mais caro ou o sistema mais moderno.</p><p class="script-line" tabindex="0" data-line="16" title="Clique para marcar este trecho como atual">É usar uma ferramenta que realmente ajude no cuidado e respeite a pessoa que está sendo acompanhada.</p></div>
+        </section><section class="beat" aria-label="Trecho 4: Nossa análise">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">04</span><h3>Nossa análise</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="17" title="Clique para marcar este trecho como atual">Se tivéssemos que resumir nossa análise em uma frase, seria esta: a <strong class="ink-mark">saúde conectada</strong> funciona melhor quando a <strong class="ink-mark">tecnologia, a equipe médica e a segurança dos dados trabalham juntas</strong>.</p><p class="script-line" tabindex="0" data-line="18" title="Clique para marcar este trecho como atual">Essa ideia também mostra por que o tema importa para a sociedade.</p><p class="script-line" tabindex="0" data-line="19" title="Clique para marcar este trecho como atual">A internet não serve apenas para conversar ou acessar redes sociais.</p><p class="script-line" tabindex="0" data-line="20" title="Clique para marcar este trecho como atual">Ela também pode ajudar no cuidado com a saúde e na forma como hospitais organizam o atendimento.</p><p class="script-line" tabindex="0" data-line="21" title="Clique para marcar este trecho como atual">Mas o avanço precisa acontecer com responsabilidade.</p><p class="script-line" tabindex="0" data-line="22" title="Clique para marcar este trecho como atual">É preciso pensar em quem tem acesso aos aparelhos, na qualidade das informações e na privacidade de cada paciente.</p></div>
+        </section><section class="beat" aria-label="Trecho 5: Conclusão final">
+          <header class="beat-heading"><span class="beat-dot" aria-hidden="true">05</span><h3>Conclusão final</h3><span class="beat-stripe"></span></header>
+          <div class="beat-body"><p class="script-line" tabindex="0" data-line="23" title="Clique para marcar este trecho como atual">Por isso, a conclusão do grupo é que a <strong class="ink-mark">saúde conectada</strong> tem potencial para melhorar o acompanhamento e a qualidade de vida.</p><p class="script-line" tabindex="0" data-line="24" title="Clique para marcar este trecho como atual">Só que esse avanço precisa vir junto com a proteção dos dados e a atuação dos profissionais de saúde.</p><p class="script-line" tabindex="0" data-line="25" title="Clique para marcar este trecho como atual">Obrigado pela atenção.</p></div>
+        </section>
+        </div>
+        <footer class="speech-foot">
+          <div class="remember-title">Resumo para memorizar</div>
+          <ol class="remember-list"><li>Acompanhamento remoto</li><li>Economia com limites</li><li>Privacidade e cuidado</li><li>Tecnologia com responsabilidade</li></ol>
+        </footer>
+      </article>
+ <div class="after-reading"><button class="control-btn" id="prev">← Voltar</button><button class="control-btn" id="next">Próxima fala →</button></div>
+ </div>
+ <aside class="aside-right" aria-label="Recursos para ensaio">
+  <section class="right-card"><h2 class="side-title">Cronômetro de ensaio</h2><p class="timer-caption">Marque o tempo real, do começo ao fim.</p><div class="timer-value" id="timer" role="timer" aria-label="Tempo decorrido">00:00</div><div class="time-target">● Meta do grupo: 09:00 a 09:30</div><div class="timer-buttons"><button class="control-btn" id="timer-toggle">Iniciar</button><button class="control-btn" id="timer-reset">Zerar</button></div><p class="timer-status" id="timer-status" aria-live="polite">Inicie quando começarem o ensaio.</p><p class="time-note">Pelo PDF: abaixo de 8 ou acima de 10 minutos há penalidade de 1 ponto. O tempo deve ser testado com a fala real.</p></section>
+  <section class="right-card"><h2 class="side-title">Mapa de memória</h2><ul class="memory-points" id="memory-points"><li>Relógio inteligente</li><li>Sensor e internet</li><li>Acompanhamento a distância</li><li>Prevenção</li></ul><p class="aside-hint">Aprenda as ideias. O roteiro é para praticar; não dependa de ler durante a apresentação.</p></section>
+ </aside>
+</main>
+<p class="endnote">Roteiro de ensaio • Saúde Conectada • Texto original preservado com ordem de fala corrigida. Observação: a estatística de “até 45%” vem do material fornecido e deve ser acompanhada da fonte do artigo para apresentação como evidência.</p>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(()=>{'use strict';
+  document.documentElement.classList.add('enhanced');
+  const storage={getItem:(key)=>{try{return localStorage.getItem(key)}catch{return null}},setItem:(key,value)=>{try{localStorage.setItem(key,value)}catch{}}};
+  const slides=[...document.querySelectorAll('.speech-panel')];
+  const nav=[...document.querySelectorAll('.stage-item')];
+  const memory=document.getElementById('memory-points');
+  let active=0;
+  let font=Number(storage.getItem('sc-font')||21);
+  font=Math.max(17,Math.min(30,font));
+  let toastTimeout;
+  function notify(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>el.classList.remove('show'),2200)}
+  function setFont(px){font=Math.min(30,Math.max(17,px));document.documentElement.style.setProperty('--user-font',font+'px');document.getElementById('font-indicator').textContent=font;storage.setItem('sc-font',String(font))}
+  setFont(font);
+  function show(index,scroll=true){
+    active=Math.max(0,Math.min(slides.length-1,index));
+    slides.forEach((s,i)=>{s.hidden=(i!==active);});
+    nav.forEach((b,i)=>{b.classList.toggle('is-active',i===active);if(i===active)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});
+    document.getElementById('stage-progress').style.width=((active+1)/4*100)+'%';
+    document.getElementById('stage-count').textContent=(active+1)+' de 4';
+    document.getElementById('prev').disabled=active===0;
+    document.getElementById('next').disabled=active===3;
+    document.getElementById('next').textContent=active===2?'Ir para conclusão →':'Próxima fala →';
+    const anchors=[...slides[active].querySelectorAll('.remember-list li')];
+    memory.replaceChildren(...anchors.map(el=>{const li=document.createElement('li');li.textContent=el.textContent;return li}));
+    if(scroll){const top=document.getElementById('main').getBoundingClientRect().top+window.scrollY-75;window.scrollTo({top:Math.max(0,top),behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'})}
+  }
+  nav.forEach((el,i)=>el.addEventListener('click',()=>show(i)));
+  document.getElementById('prev').addEventListener('click',()=>show(active-1));
+  document.getElementById('next').addEventListener('click',()=>show(active+1));
+  document.getElementById('bigger').addEventListener('click',()=>setFont(font+1));
+  document.getElementById('smaller').addEventListener('click',()=>setFont(font-1));
+  const focusBtn=document.getElementById('focus');
+  function setFocus(state){document.body.classList.toggle('focus-mode',state);focusBtn.classList.toggle('is-on',state);focusBtn.setAttribute('aria-pressed',String(state));focusBtn.querySelector('span').textContent=state?'Sair do foco':'Modo foco';}
+  focusBtn.addEventListener('click',()=>setFocus(!document.body.classList.contains('focus-mode')));
+  const themeBtn=document.getElementById('theme');
+  function setDark(state){document.body.classList.toggle('dark-mode',state);themeBtn.setAttribute('aria-pressed',String(state));themeBtn.classList.toggle('is-on',state);storage.setItem('sc-theme',state?'dark':'light')}
+  if(storage.getItem('sc-theme')==='dark')setDark(true);
+  themeBtn.addEventListener('click',()=>setDark(!document.body.classList.contains('dark-mode')));
+  document.querySelectorAll('.script-line').forEach(line=>{
+    const mark=()=>{slides[active].querySelectorAll('.script-line.is-current').forEach(p=>p.classList.remove('is-current'));line.classList.add('is-current')};
+    line.addEventListener('click',mark);
+    line.addEventListener('keydown',ev=>{if(ev.key==='Enter'){mark();ev.preventDefault()}});
+  });
+  function plainSpeech(s){return [...s.querySelectorAll('.script-line')].map(x=>x.textContent.trim()).join('\n\n')}
+  document.getElementById('copy').addEventListener('click',async()=>{
+    const script=plainSpeech(slides[active]);
+    try{if(!navigator.clipboard)throw new Error('clipboard unavailable');await navigator.clipboard.writeText(script);notify('Fala copiada!')}
+    catch{const area=document.createElement('textarea');area.value=script;document.body.appendChild(area);area.select();const ok=document.execCommand('copy');area.remove();notify(ok?'Fala copiada!':'Não foi possível copiar automaticamente.');}
+  });
+  document.getElementById('print').addEventListener('click',()=>window.print());
+  document.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey||/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName||''))return;if(e.key==='ArrowRight'){e.preventDefault();show(active+1)}else if(e.key==='ArrowLeft'){e.preventDefault();show(active-1)}else if(e.key==='Escape'&&document.body.classList.contains('focus-mode')){setFocus(false)}});
+  const timerEl=document.getElementById('timer'),timerBtn=document.getElementById('timer-toggle'),timerNote=document.getElementById('timer-status');
+  let elapsed=0,start=0,tick=null;
+  function seconds(){return tick ? elapsed+Math.floor((performance.now()-start)/1000) :elapsed}
+  function paintTime(){const s=seconds();timerEl.textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');if(s>=600){timerNote.textContent='Passou de 10 minutos: fora do limite do PDF.';timerNote.style.color='#b65c32'}else if(s>=480){timerNote.textContent='Dentro do intervalo exigido de 8 a 10 minutos.';timerNote.style.color='var(--primary)'}else{timerNote.textContent='Faltam '+Math.ceil((480-s)/60)+' min (aprox.) para chegar a 8 minutos.';timerNote.style.color=''}}
+  timerBtn.addEventListener('click',()=>{if(tick){elapsed=seconds();clearInterval(tick);tick=null;timerBtn.textContent='Continuar';paintTime()}else{start=performance.now();tick=setInterval(paintTime,180);timerBtn.textContent='Pausar';paintTime()}});
+  document.getElementById('timer-reset').addEventListener('click',()=>{if(tick)clearInterval(tick);tick=null;elapsed=0;timerBtn.textContent='Iniciar';timerEl.textContent='00:00';timerNote.style.color='';timerNote.textContent='Inicie quando começarem o ensaio.'});
+  show(0,false);
+})();
+</script>
+</body>
+</html>
